@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <th:block th:replace="fragments/_head.html::head"></th:block>
+
+</head>
+
+<body>
+
+  <!-- ======= Header =======creer pdf pour telecharger avec itech et jasper report -->
+  <th:block th:replace="fragments/_header.html::header"></th:block>
+    <!-- End Header -->
+  <main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2></h2>
+          <ol>
+            <li><a th:href="@{/}">Accueil</a></li>
+            <li>rechercher un acte</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs -->
+
+    <section class="inner-page">
+      <div class="container">
+        <section id="team" class="team">
+            <div class="container">
+      
+              <div class="row">
+
+                    <div class="col-lg-4">
+                        <div class="section-title" data-aos="fade-right">
+                            <h3>Rechercher un acte</h3>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 footer-newsletter">
+                        <form th:method="POST"
+                              th:action="@{/recherche}" >
+                            <input  type="text" name="keyword" placeholder="entrer le nom ou le numero"><input type="submit" value="Rechercher">
+                        </form>
+
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                  <div class="row">
+                    <p></p>
+                      <div th:each="acteDto : ${actedtos}"   class="col-lg-4 mt-4 mt-lg-0">
+                          <div class="member" data-aos="zoom-in" data-aos-delay="200">
+                              <div class="pic"><img th:src="@{/assets/img/team/acteicon.png}" class="img-fluid" alt=""></div>
+                              <div class="member-info">
+                                  <h4 th:text="${acteDto.nom}">YOUMBI</h4>
+                                  <h5 th:text="${acteDto.prenom}">Belle Sarah</h5>
+                                  <!--span>Product Manager</span>
+                                  <p>Aut maiores voluptates amet et quis praesentium qui senda para</p-->
+                                  <div class="social">
+                                      <a th:href="@{'/detail?numero=' + ${acteDto.numero}}" class=" bg-success"><i class="ri-eye-line"></i></a>
+                                      <a href=""><i class="ri-edit-box-line"></i></a>
+                                      <a th:href="@{'/supprimer?numero=' + ${acteDto.numero}}" class=" bg-danger"><i class="ri-delete-bin-3-fill"></i></a>
+
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+      
+                  </div>
+      
+                </div>
+              </div>
+
+            </div>
+
+        </section>
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <th:block th:replace="fragments/_footer.html::footer"></th:block>
+  <!-- End Footer -->
+
+  <th:block th:replace="fragments/_js.html::js"></th:block>
+
+</body>
+
+</html>

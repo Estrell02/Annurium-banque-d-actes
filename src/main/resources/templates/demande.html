@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <th:block th:replace="fragments/_head.html::head"></th:block>
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <th:block th:replace="fragments/_header.html::header"></th:block>
+  <!-- End Header -->
+  <main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2></h2>
+          <ol>
+            <li><a th:href="{/}">Accueil</a></li>
+            <li>Demander un acte</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs -->
+
+    <section class="inner-page" id="demande">
+      <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="col-lg-10 mt-4">
+                    <div class="info">
+
+                        <h4>Demander un acte de naissance</h4>
+                        <p>Entrer les informations de l'acte de naissance que vous demandez</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-8">
+                <form   th:method="POST"
+                      th:action="@{/recherche}"   role="form" class="php-email-form mt-4">
+                    <label for="" class="text-label">Informations de la personne</label>
+                    <div class="row">
+
+                        <div class="col-md-6 form-group">
+                            <input th:field="*{keyword}" type="text" name="keyword" class="form-control" id="nom" placeholder="Nom da personne" required>
+                        </div>
+                        <div class="col-md-6 form-group mt-3 mt-md-0">
+                            <input type="text" class="form-control" name="prenom" id="prenom" placeholder="Prénom de la personne" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 form-group">
+                            <input type="date" name="datenaissance" class="form-control" id="name" placeholder="Date de naissance" required></div>
+                        <div class="col-md-6 form-group mt-3 mt-md-0">
+                            <input type="text" class="form-control" name="lieu" id="lieu" placeholder="Lieu de naissance" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6 form-group">
+                          <input type="email" name="Email" class="form-control" id="name" placeholder="Votre adresse email" required>
+                      </div>
+                     
+                  </div>
+
+                   
+                    
+                    <div class="text-center"><button type="submit">Soumettre</button></div>
+                </form>
+            </div>
+        </div>
+        
+
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+
+  <th:block th:replace="fragments/_footer.html::footer"></th:block>
+  <!-- End Footer -->
+
+  <th:block th:replace="fragments/_js.html::js"></th:block>
+
+</body>
+
+</html>

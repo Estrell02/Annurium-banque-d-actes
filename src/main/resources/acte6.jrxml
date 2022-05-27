@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.19.1.final using JasperReports Library version 6.19.1-867c00bf88cd4d784d404379d6c05e1b419e8a4c  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="acte6" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2f6e4db4-9f8f-4ffe-9759-6e1fd142f492">
+    <!--property name="template.type" value="columnar"/-->
+
+    <style name="Title" forecolor="#000000" fontName="Times New Roman" fontSize="18" isBold="false"/>
+    <style name="SubTitle" forecolor="#666666" fontName="Times New Roman" fontSize="18" isBold="false"/>
+    <style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true"/>
+    <style name="Detail" mode="Transparent" fontName="Times New Roman" fontSize="91"/>
+    <style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+        <conditionalStyle>
+            <conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+            <style mode="Opaque" backcolor="#F0EFEF"/>
+        </conditionalStyle>
+    </style>
+
+    <field name="numero" class="java.lang.String">
+
+    </field>
+    <field name="nom" class="java.lang.String">
+
+    </field>
+    <field name="prenom" class="java.lang.String">
+
+    </field>
+    <field name="dateNaissance" class="java.lang.String">
+
+    </field>
+    <field name="lieudeNaissance" class="java.lang.String">
+
+    </field>
+    <field name="nomPrenomPere" class="java.lang.String">
+
+    </field>
+    <field name="nomPrenomMere" class="java.lang.String">
+
+    </field>
+    <background>
+        <band splitType="Stretch"/>
+    </background>
+    <title>
+        <band height="219" splitType="Stretch">
+            <!--image>
+                <reportElement x="2" y="0" width="118" height="132" uuid="d47168ce-aae1-4efc-8d24-e15195025a5a"/>
+                <imageExpression><![CDATA["tree1.png"]]></imageExpression>
+            </image-->
+            <staticText>
+                <reportElement style="Title" x="120" y="10" width="435" height="93" uuid="f49d68fd-a2c7-44ec-a5fc-9300d10c85a1"/>
+                <textElement textAlignment="Center">
+                    <font size="53" isBold="false"/>
+                </textElement>
+                <text><![CDATA[Acte de Naissance]]></text>
+            </staticText>
+            <staticText>
+                <reportElement style="SubTitle" x="336" y="103" width="217" height="29" uuid="eef58983-008d-4a5b-8e47-97f8d4670c7a"/>
+                <textElement>
+                    <font size="22" isBold="false"/>
+                </textElement>
+                <text><![CDATA[Mairie de Yaounde]]></text>
+            </staticText>
+            <line>
+                <reportElement positionType="FixRelativeToBottom" x="-7" y="218" width="551" height="1" isPrintInFirstWholeBand="true" uuid="2a07c0ba-2c4e-434c-bcae-24d2f70324dd"/>
+            </line>
+        </band>
+    </title>
+    <pageHeader>
+        <band splitType="Stretch"/>
+    </pageHeader>
+    <columnHeader>
+        <band splitType="Stretch"/>
+    </columnHeader>
+    <detail>
+        <band height="271" splitType="Stretch">
+            <staticText>
+                <reportElement style="Column header" positionType="Float" x="83" y="90" width="132" height="20" isPrintInFirstWholeBand="true" forecolor="#000000" uuid="b0b01ca5-e8f9-47dd-841e-b2c50a4530ba"/>
+                <textElement textAlignment="Right">
+                    <font isBold="false"/>
+                </textElement>
+                <text><![CDATA[Numero :]]></text>
+            </staticText>
+            <textField textAdjust="StretchHeight" isBlankWhenNull="true">
+                <reportElement style="Detail" positionType="Float" x="219" y="90" width="338" height="18" isPrintInFirstWholeBand="true" uuid="7ef4f263-626d-4fc9-82d8-f56e5dc98365"/>
+                <textElement>
+                    <font size="14" isBold="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{numero}]]></textFieldExpression>
+            </textField>
+            <staticText>
+                <reportElement style="Column header" positionType="Float" x="83" y="110" width="132" height="20" isPrintInFirstWholeBand="true" forecolor="#000000" uuid="48e7fd92-8652-4ad2-8c12-c30a0f22cfef"/>
+                <textElement textAlignment="Right">
+                    <font isBold="false"/>
+                </textElement>
+                <text><![CDATA[Nom de l'enfant :]]></text>
+            </staticText>
+            <textField textAdjust="StretchHeight" isBlankWhenNull="true">
+                <reportElement style="Detail" positionType="Float" x="219" y="110" width="338" height="18" isPrintInFirstWholeBand="true" uuid="d9b0db30-2a81-4685-baf3-1d787c96d807"/>
+                <textElement>
+                    <font size="14" isBold="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{nom}]]></textFieldExpression>
+            </textField>
+            <staticText>
+                <reportElement style="Column header" positionType="Float" x="83" y="130" width="132" height="20" isPrintInFirstWholeBand="true" forecolor="#000000" uuid="c0557229-0c1d-4465-b0b0-ff7146ffe5ae"/>
+                <textElement textAlignment="Right">
+                    <font isBold="false"/>
+                </textElement>
+                <text><![CDATA[Prenom de l'enfant :]]></text>
+            </staticText>
+            <textField textAdjust="StretchHeight" isBlankWhenNull="true">
+                <reportElement style="Detail" positionType="Float" x="219" y="130" width="338" height="18" isPrintInFirstWholeBand="true" uuid="7ab1bace-f592-484b-bb96-2732790049c0"/>
+                <textElement>
+                    <font size="14" isBold="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{prenom}]]></textFieldExpression>
+            </textField>
+            <staticText>
+                <reportElement style="Column header" positionType="Float" x="83" y="150" width="132" height="20" isPrintInFirstWholeBand="true" forecolor="#000000" uuid="5d58e41b-dfa3-44a3-9749-cba74e7f7ac1"/>
+                <textElement textAlignment="Right">
+                    <font isBold="false"/>
+                </textElement>
+                <text><![CDATA[Date de naissance :]]></text>
+            </staticText>
+            <textField textAdjust="StretchHeight" isBlankWhenNull="true">
+                <reportElement style="Detail" positionType="Float" x="219" y="150" width="338" height="18" isPrintInFirstWholeBand="true" uuid="5bafd2a7-9b0e-4670-86bc-3ee4084df5d7"/>
+                <textElement>
+                    <font size="14" isBold="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{dateNaissance}]]></textFieldExpression>
+            </textField>
+            <staticText>
+                <reportElement style="Column header" positionType="Float" x="83" y="170" width="132" height="20" isPrintInFirstWholeBand="true" forecolor="#000000" uuid="1bfbf5b1-2a2b-43d2-93d6-407ebbbede80"/>
+                <textElement textAlignment="Right">
+                    <font isBold="false"/>
+                </textElement>
+                <text><![CDATA[Lieu de naissance :]]></text>
+            </staticText>
+            <textField textAdjust="StretchHeight" isBlankWhenNull="true">
+                <reportElement style="Detail" positionType="Float" x="219" y="170" width="338" height="18" isPrintInFirstWholeBand="true" uuid="09ef7c35-6575-4548-904b-41c737b17596"/>
+                <textElement>
+                    <font size="14" isBold="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{lieudeNaissance}]]></textFieldExpression>
+            </textField>
+            <staticText>
+                <reportElement style="Column header" positionType="Float" x="83" y="190" width="132" height="20" isPrintInFirstWholeBand="true" forecolor="#000000" uuid="7add9112-2c16-4a26-b4dc-07818fa0dc8e"/>
+                <textElement textAlignment="Right">
+                    <font isBold="false"/>
+                </textElement>
+                <text><![CDATA[Nom du pere]]></text>
+            </staticText>
+            <textField textAdjust="StretchHeight" isBlankWhenNull="true">
+                <reportElement style="Detail" positionType="Float" x="219" y="190" width="338" height="18" isPrintInFirstWholeBand="true" uuid="c24ecf64-e83b-407e-971c-107c1e60d980"/>
+                <textElement>
+                    <font size="14" isBold="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{nomPrenomPere}]]></textFieldExpression>
+            </textField>
+            <staticText>
+                <reportElement style="Column header" positionType="Float" x="83" y="210" width="132" height="20" isPrintInFirstWholeBand="true" forecolor="#000000" uuid="23fe13e4-b709-4f59-ad4a-7048abbc713e"/>
+                <textElement textAlignment="Right">
+                    <font isBold="false"/>
+                </textElement>
+                <text><![CDATA[Nom de la mere :]]></text>
+            </staticText>
+            <textField textAdjust="StretchHeight" isBlankWhenNull="true">
+                <reportElement style="Detail" positionType="Float" x="219" y="210" width="338" height="18" isPrintInFirstWholeBand="true" uuid="546f66e0-dec2-443e-8610-c5a5283f3a6d"/>
+                <textElement>
+                    <font size="14" isBold="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{nomPrenomPere}]]></textFieldExpression>
+            </textField>
+        </band>
+    </detail>
+    <columnFooter>
+        <band height="7" splitType="Stretch">
+            <line>
+                <reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="fab082df-3ca0-43ac-900e-4da3f8b5a45d"/>
+                <graphicElement>
+                    <pen lineWidth="0.5" lineColor="#999999"/>
+                </graphicElement>
+            </line>
+        </band>
+    </columnFooter>
+    <pageFooter>
+        <band height="13" splitType="Stretch">
+            <frame>
+                <reportElement mode="Opaque" x="2" y="0" width="555" height="13" forecolor="#D0B48E" backcolor="#9DB1B8" uuid="bfdca178-800d-445c-9a31-bb616a00e8ce"/>
+                <textField evaluationTime="Report">
+                    <reportElement style="Column header" x="513" y="0" width="40" height="13" forecolor="#FFFFFF" uuid="2fba0f87-635e-476d-858f-d102b26146fe"/>
+                    <textElement verticalAlignment="Middle">
+                        <font size="10" isBold="false"/>
+                    </textElement>
+                    <textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+                </textField>
+                <textField>
+                    <reportElement style="Column header" mode="Transparent" x="433" y="0" width="80" height="13" forecolor="#FFFFFF" uuid="e454d23d-bcfc-4c79-a399-0ef520a3150a"/>
+                    <textElement textAlignment="Right" verticalAlignment="Middle">
+                        <font size="10" isBold="false"/>
+                    </textElement>
+                    <textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+                </textField>
+                <textField pattern="EEEEE dd MMMMM yyyy">
+                    <reportElement style="Column header" x="2" y="0" width="197" height="13" forecolor="#FFFFFF" uuid="14d8de1e-8695-4078-a67f-0e69172574d5"/>
+                    <textElement verticalAlignment="Middle">
+                        <font size="10" isBold="false"/>
+                    </textElement>
+                    <textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+                </textField>
+            </frame>
+        </band>
+    </pageFooter>
+    <summary>
+        <band splitType="Stretch"/>
+    </summary>
+</jasperReport>
